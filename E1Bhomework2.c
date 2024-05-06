@@ -29,14 +29,24 @@ printf("55557G?YB5PPGGGPPPP5YYJ?JJJJJYYYYYYJJJJJJJPG!~~~~!PY~~~~~~~~\n");
 printf("5555!#?P#YJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ5GJJ?!!7P5J7!!!!!77\n");
 printf("5555~G5G#5JJJJJJJJJJJJJJJJJJJJJJJYYY5P5JJB5JJJJ5B5JYYYYYYYYY\n");
  int password;//宣告密碼	 
-    printf("請輸入4個數字的密碼: ");//顯示輸入4個密碼 
-    scanf("%d",&password);//輸入密碼 
-    if	(password==2024){
-    	printf("歡迎!");//如果密碼輸入正確,則顯示歡迎 
+    int a=0;//宣告輸入的次數 
+    while(a<3){
+    	printf("請輸入4個數字的密碼: ");//顯示輸入4個密碼 
+    	scanf("%d",&password);//輸入密碼 
+    	if(password==2024)
+    	{
+    		printf("密碼正確!\n");
+    		break;
+		}
+		else
+		{
+			printf("密碼錯誤，請再次輸入\n");
+			a++;
+		}
 	}
-	else{
-		printf("警告!密碼錯誤,程式將結束");//密碼輸入錯誤,則顯示警告錯誤訊息
-		return 0; 
+	if(a==3)
+	{
+		printf("以輸入三次錯誤，程式即將結束\n");
 	}
 	system("pause"); // 螢幕畫面暫停，並等待使用者按任意鍵。
 	system("CLS");  // 清除螢幕
