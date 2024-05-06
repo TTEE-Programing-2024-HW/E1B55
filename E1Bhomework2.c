@@ -1,8 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 int main(void){
- 	int count1=0,count2=0,count3=0,count4=0;
-	char option,anykey;
+ 	int count1=0,count2=0,count3=0,count4=0;//宣告count1=0,count2=0,count3=0,count4=0
+	char option,anykey;//宣告字元option,anykey
+	//步驟1: 
 printf("55555555555555555555555555555555555555555555555YJJJJJJJJJJJJ\n");
 printf("5555555555555555555555555555555555555555555555JJJJYJJJJJJJJJ\n");
 printf("55555555555555555555555555555555555555555555YJJJJYJJJJJJJJY5\n");
@@ -31,7 +32,7 @@ printf("55557G?YB5PPGGGPPPP5YYJ?JJJJJYYYYYYJJJJJJJPG!~~~~!PY~~~~~~~~\n");
 printf("5555!#?P#YJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ5GJJ?!!7P5J7!!!!!77\n");
 printf("5555~G5G#5JJJJJJJJJJJJJJJJJJJJJJJYYY5P5JJB5JJJJ5B5JYYYYYYYYY\n");
  	int password;//宣告密碼	 
-    int a=0;//宣告輸入的次數 
+    int a=0;//輸入的次數 
     while(a<3){
     	
     	printf("請輸入4個數字的密碼: ");//顯示輸入4個密碼 
@@ -56,11 +57,13 @@ printf("5555~G5G#5JJJJJJJJJJJJJJJJJJJJJJJYYY5P5JJB5JJJJ5B5JYYYYYYYYY\n");
 	while(count4==0)
  	{	
 	system("CLS");  // 清除螢幕
+	//步驟2 
 	printf("--------------------------\n");
 	printf("|  a. 畫出直角三角形	 |\n");
 	printf("|  b. 顯示乘法表	 |\n");
 	printf("|  c. 結束		 |\n");
 	printf("--------------------------\n");
+	//步驟3 
 	printf("請輸入選單字元\n");
 	fflush(stdin);
 	option=getche();//打出一個字元，會顯示在螢幕上 	
@@ -102,6 +105,7 @@ printf("5555~G5G#5JJJJJJJJJJJJJJJJJJJJJJJYYY5P5JJB5JJJJ5B5JYYYYYYYYY\n");
     			}
     		}		
     		break;
+    		//步驟4 
     	case 'B'://顯示B的選單 
 		case 'b'://顯示b的選單 
 			count2=0;
@@ -135,9 +139,39 @@ printf("5555~G5G#5JJJJJJJJJJJJJJJJJJJJJJJYYY5P5JJB5JJJJ5B5JYYYYYYYYY\n");
     			}
     		}		
     		break;
+    		//步驟5 
     	case 'C'://顯示C的選單 
-		case 'c'://顯示c的選單 
+		case 'c'://顯示c的選單
+			count3=0; 
+			int y_n;
+			while( count3==0)
+    {
+     printf("\nContinue?(y/n):");
+     fflush(stdin);
+     y_n=getche();
+     if(y_n=='Y'||y_n=='y')
+      count3++;
+     else if(y_n=='N'||y_n=='n')
+     {
+      count4++;
+      count3++;
+     }
+     else
+        {
+         
+      printf(" 輸入錯誤，請再次輸入\n");
+      system("pause");
+      system("cls");      
+     }
+    }
+    break;
+    default:
+    	printf("輸入錯誤\n");
 	}
 	}
 	return 0;
-}
+}//這次的程式作業，我前面利用了跟第一次作業相同作法印出圖片、輸入密碼跟顯示清單。 
+//在第一個清單中，我第一次印的時候沒有考量到要靠右，之後我請教了我室友，他要我用算的算出空格格式， 於是在相對應的更改，才糾正好錯誤的地方。 
+//在第二個清單中，我想說跟第一個清單一樣，按任意鍵回到清單，不在區間則顯示錯誤，但我沒有看清楚，忘記將count 1複製的地方改成count2， 一直在那邊按都按不出來，請教室友一起查看，才將其問題找到。 
+//在第三個清單中是相較於其他較簡單的，之後我在檢查排版。
+// 這次的作業利用到像是for 跟while 的迴圈，如果在某一個迴圈地方出錯，則結果會跟預想的不一樣，利用這次的作業也讓我更了解到迴圈怎麼用。 
