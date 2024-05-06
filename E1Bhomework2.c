@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 int main(void){
- 	int count1=0,count2,count3,count4=0;
-	char option;
+ 	int count1=0,count2=0,count3=0,count4=0;
+	char option,anykey;
 printf("55555555555555555555555555555555555555555555555YJJJJJJJJJJJJ\n");
 printf("5555555555555555555555555555555555555555555555JJJJYJJJJJJJJJ\n");
 printf("55555555555555555555555555555555555555555555YJJJJYJJJJJJJJY5\n");
@@ -71,7 +71,7 @@ printf("5555~G5G#5JJJJJJJJJJJJJJJJJJJJJJJYYY5P5JJB5JJJJ5B5JYYYYYYYYY\n");
 			count1=0;
 			while(count1==0)
  		   {
-				char anykey,n;
+				char n;
  			    system("cls");
   			    printf("請輸入一個a~n的字元:\n");
 				fflush(stdin);//清除緩衝區 
@@ -104,7 +104,39 @@ printf("5555~G5G#5JJJJJJJJJJJJJJJJJJJJJJJYYY5P5JJB5JJJJ5B5JYYYYYYYYY\n");
     		break;
     	case 'B'://顯示B的選單 
 		case 'b'://顯示b的選單 
-			
+			count2=0;
+			while(count2==0)
+ 		   {
+				char n;
+ 			    system("cls");
+  			    printf("請輸入一個1~9的整數:\n");
+				fflush(stdin);//清除緩衝區 
+				n=getch();    	
+	 
+ 				if(n>='1'&& n<='9')
+ 				{	
+ 					int i,j;
+ 					for(i=1;i<=n-48;i++)
+ 					{
+ 						for(j=1;j<=n-48;j++)
+ 						printf("%-3d",i*j);
+ 						printf("\n");
+					}
+					
+    	
+    			printf("請按任意鍵回到主選單");
+    			anykey=getch();
+    			count2++;
+    			}
+   				else
+ 			    {
+    				printf("警告!請重新輸入");
+    				system("pause");            
+    			}
+    		}		
+    		break;
+    	case 'C'://顯示C的選單 
+		case 'c'://顯示c的選單 
 	}
 	}
 	return 0;
