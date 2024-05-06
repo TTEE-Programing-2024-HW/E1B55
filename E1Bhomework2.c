@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
  int main(void){
+ 	int count1,count2,count3,count4=0;
+ 	char option,anykey,n;
 printf("55555555555555555555555555555555555555555555555YJJJJJJJJJJJJ\n");
 printf("5555555555555555555555555555555555555555555555JJJJYJJJJJJJJJ\n");
 printf("55555555555555555555555555555555555555555555YJJJJYJJJJJJJJY5\n");
@@ -46,8 +48,11 @@ printf("5555~G5G#5JJJJJJJJJJJJJJJJJJJJJJJYYY5P5JJB5JJJJ5B5JYYYYYYYYY\n");
 	}
 	if(a==3)//如果輸入錯誤次數到達三次 
 	{
-		printf("以輸入三次錯誤，程式即將結束\n");//顯示輸入三次錯誤，程式將結束 
+		printf("以輸入三次錯誤，程式即將結束\n");//顯示輸入三次錯誤，程式將結束
+		return 0; 
 	}
+	 while(count4==0)
+ {
 	system("pause"); // 螢幕畫面暫停，並等待使用者按任意鍵。
 	system("CLS");  // 清除螢幕
 	printf("--------------------------\n");
@@ -57,5 +62,44 @@ printf("5555~G5G#5JJJJJJJJJJJJJJJJJJJJJJJYYY5P5JJB5JJJJ5B5JYYYYYYYYY\n");
 	printf("--------------------------\n");
 	printf("請輸入選單字元\n");
 	fflush(stdin);
-
+	option=getche();//打出一個字元，會顯示在螢幕上 	
+	switch(option){
+	case 'A'://顯示A的選單 
+	case 'a'://顯示a的選單 
+	while(count1==0)
+    {
+    system("cls");
+    printf("請輸入一個a~n的字元:");
+    fflush(stdin);//清除緩衝區 
+    n=getch();
+    
+    {
+	int i, j, k;
+    for (i = 1; i <= n - 'a' + 1; i++) { 
+        for (k = n - 'a'; k >= i; k--) {
+            printf(" ");
+        } 
+        for (j = 1; j <= i; j++) {
+            printf("%c ", 'a' + n - 'a' - j);
+        }
+        printf("\n");
+    }
+	} 
+    
+    if(n>='a'&&n<='n')
+    {
+    	
+    printf("請按任意鍵回到主選單");
+    anykey=getch();
+    count1++;
+    }
+    else
+    {
+    printf("警告!請重新輸入");
+    system("pause");            
+    }
+    }
+    break;
  }
+}
+}
