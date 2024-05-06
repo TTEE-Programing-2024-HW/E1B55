@@ -33,21 +33,29 @@ printf("5555~G5G#5JJJJJJJJJJJJJJJJJJJJJJJYYY5P5JJB5JJJJ5B5JYYYYYYYYY\n");
     while(a<3){
     	printf("請輸入4個數字的密碼: ");//顯示輸入4個密碼 
     	scanf("%d",&password);//輸入密碼 
-    	if(password==2024)
+    	if(password==2024)//密碼為2024 
     	{
-    		printf("密碼正確!\n");
+    		printf("密碼正確!進入\n");//如果輸入正確，則進入下一個步驟 
     		break;
 		}
 		else
 		{
-			printf("密碼錯誤，請再次輸入\n");
+			printf("警告!密碼錯誤，請再次輸入\n");//密碼輸入錯誤,則顯示再次輸入 
 			a++;
 		}
 	}
-	if(a==3)
+	if(a==3)//如果輸入錯誤次數到達三次 
 	{
-		printf("以輸入三次錯誤，程式即將結束\n");
+		printf("以輸入三次錯誤，程式即將結束\n");//顯示輸入三次錯誤，程式將結束 
 	}
 	system("pause"); // 螢幕畫面暫停，並等待使用者按任意鍵。
 	system("CLS");  // 清除螢幕
+	printf("--------------------------\n");
+	printf("|  a. 畫出直角三角形	 |\n");
+	printf("|  b. 顯示乘法表	 |\n");
+	printf("|  c. 結束		 |\n");
+	printf("--------------------------\n");
+	printf("請輸入選單字元\n");
+	fflush(stdin);
+
  }
