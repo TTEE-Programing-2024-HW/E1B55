@@ -1,7 +1,7 @@
 #include<Stdio.h>
 #include<stdlib.h>
 int main(){
-
+	int count1=0,count2=0,count3=0,count4=0,count5=0;//宣告count1=0,count2=0,count3=0,count4=0,count5=0
 printf("                    .^^:                                    \n");
 printf("                    !@@B^                                   \n");
 printf("                    !@@@B   ~PPP!     :~~:                  \n");
@@ -42,5 +42,18 @@ printf("                         .!7!.                              \n");
 		printf("以輸入三次錯誤，程式即將結束\n");//顯示輸入三次錯誤，程式將結束
 		return 0; 
 	}
-
+	while(count5==0)
+ 	{	
+	system("CLS");  // 清除螢幕
+	//步驟2 
+	printf("--------------------------\n");
+	printf("|  a.  Available seats	 |\n");
+	printf("|  b. Arrange for you	 |\n");
+	printf("|  c. Choose by yourself |\n");
+	printf("|  d. Exit               |\n");
+	printf("--------------------------\n");
+	//步驟3 
+	printf("請輸入選單字元\n");
+	fflush(stdin);
+	option=getche();//打出一個字元，會顯示在螢幕上 	
 }
