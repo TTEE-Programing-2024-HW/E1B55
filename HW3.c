@@ -7,9 +7,11 @@
 #define COLS 9  // 定義座位表的列數
 
 // 函數聲明
-void initializeSeats(char seats[ROWS][COLS]);
-void randomlyBookSeats(char seats[ROWS][COLS], int numberOfBookings);
-void displaySeats(char seats[ROWS][COLS]);
+// 函數聲明
+void inseats(char seats[ROWS][COLS]);
+void randomseats(char seats[ROWS][COLS], int bookings);
+void showseats(char seats[ROWS][COLS]);
+void suggestseats(char seats[ROWS][COLS], int numSeats, char suggestedseats[ROWS][COLS]);
 
 int main() {
     int count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0;//宣告count1=0,count2=0,count3=0,count4=0,count5=0
@@ -75,22 +77,46 @@ int main() {
             while(count1==0)
             {
                 char seats[ROWS][COLS];  // 定義座位表數組
-                initializeSeats(seats);  // 初始化座位表
-                randomlyBookSeats(seats, 10);  // 隨機預訂十個座位
-                displaySeats(seats);  // 顯示座位表
+                {
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            seats[i][j] = ' ';  // 將所有座位初始化為空位
+        }
+    }
+}
+                randomseats(seats, 10);  // 隨機預訂十個座位
+                showseats(seats);  // 顯示座位表
 
                 printf("請按任意鍵回到主選單");
                 getch();
                 count1++;
             }
             break;
+            case 'B':
+            case 'b':
+                count2 = 0;
+                while (count2 == 0) {
+                    char seats[ROWS][COLS];
+                    char suggestedSeats[ROWS][COLS];
+                    inseats(seats);  // 初始化座位表
+
+                    // 建議座位
+                    suggestseats(seats, 4, suggestedseats);
+                    Showseats(suggestedSeats);
+
+                    printf("請按任意鍵回到主選單");
+                    getch();
+                    count2++;
+                }
+                break;
+
     }
     }
     return 0;
 }
 
 // 初始化座位表函數
-void initializeSeats(char seats[ROWS][COLS]) {
+void inseats(char seats[ROWS][COLS]) {
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS; j++) {
             seats[i][j] = ' ';  // 將所有座位初始化為空位
@@ -99,21 +125,21 @@ void initializeSeats(char seats[ROWS][COLS]) {
 }
 
 // 隨機預訂座位函數
-void randomlyBookSeats(char seats[ROWS][COLS], int numberOfBookings) {
+void randomseats(char seats[ROWS][COLS], int bookings) {
     srand(time(NULL));  // 使用當前時間作為隨機數種子
-    int booked = 0;  // 已預訂的座位數
-    while (booked < numberOfBookings) {
+    int book = 0;  // 已預訂的座位數
+    while (book <bookings) {
         int row = rand() % ROWS;  // 隨機生成行號
         int col = rand() % COLS;  // 隨機生成列號
         if (seats[row][col] != '*') {  // 如果該座位未被預訂
             seats[row][col] = '*';  // 預訂該座位
-            booked++;  // 已預訂座位數加1
+            book++;  // 已預訂座位數加1
         }
     }
 }
 
 // 顯示座位表函數
-void displaySeats(char seats[ROWS][COLS]) {
+void showseats(char seats[ROWS][COLS]) {
     printf(" \\123456789\n");  // 顯示列號
     for (int i = ROWS; i > 0; i--) {
         printf("%d", i);  // 顯示行號
@@ -121,6 +147,6 @@ void displaySeats(char seats[ROWS][COLS]) {
             printf("%c", seats[ROWS - i][j]);  // 顯示每個座位的狀態
         }
         printf("\n");  // 換行
-    }
+    } 
 }
 
