@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main() 
 {
@@ -100,7 +101,7 @@ int main()
                             continue;
                         }
 
-                        printf("輸入第%d學生的數學成績: ", i + 1);
+                        printf("輸入第%d學生的數學成績: ", i+1);
                         scanf("%d", &math[i]); // 輸入數學成績
                         if (math[i] < 0 || math[i] > 100) 
 						{
@@ -109,7 +110,7 @@ int main()
                             continue;
                         }
 
-                        printf("輸入第%d學生的物理成績: ", i + 1);
+                        printf("輸入第%d學生的物理成績: ", i+1);
                         scanf("%d", &physics[i]); // 輸入物理成績
                         if (physics[i] < 0 || physics[i] > 100) 
 						{
@@ -118,7 +119,7 @@ int main()
                             continue;
                         }
 
-                        printf("輸入第%d個學生的英文成績: ", i + 1);
+                        printf("輸入第%d學生的英文成績: ", i+1);
                         scanf("%d", &english[i]); // 輸入英文成績
                         if (english[i] < 0 || english[i] > 100) 
 						{
@@ -128,7 +129,7 @@ int main()
                         }
                     }
 
-                    count1 = 1; // 完成輸入，跳出內部循環
+                    count1=1; // 完成輸入，跳出內部循環
                 }
                 break;
 
@@ -143,12 +144,45 @@ int main()
                     for (i = 0; i < n; i++) 
 					{
                         float average = (math[i] + physics[i] + english[i]) / 3.0; // 計算平均成績
-                        printf("姓名: %s, 學號: %d, 數學: %d, 物理: %d, 英文: %d, 平均成績: %.1f\n",name[i], num[i], math[i], physics[i], english[i], average); // 顯示學生資訊
+                        printf("姓名: %s,學號: %d,數學: %d,物理: %d,英文: %d,平均成績: %.1f\n",name[i],num[i],math[i],physics[i],english[i],average); // 顯示學生資訊
                     }
                     system("pause"); // 暫停屏幕等待按鍵
                     count2 = 1; // 完成顯示，跳出內部循環
                 }
                 break;
+            
+			case 'C': // 處理選項 'C'
+            case 'c': // 處理選項 'c'
+                count3 = 0;
+                while (count3 == 0) 
+				{
+                    system("CLS"); // 清除螢幕
+                    printf("請輸入要搜尋的姓名: "); //顯示要搜尋的姓名
+                    char find_name[50];
+                    scanf("%s",find_name); // 輸入要搜尋的姓名
+
+                    int found=0; 
+
+                    for (i = 0; i < n; i++) 
+					{
+                        if (strcmp(name[i],find_name) == 0) 
+						{ 
+                            found = 1; //找到學生
+                            float average = (math[i] + physics[i] + english[i]) / 3.0; // 計算平均成績
+                            printf("姓名: %s, 學號: %d, 數學: %d, 物理: %d, 英文: %d, 平均成績: %.1f\n",name[i], num[i], math[i], physics[i], english[i], average); // 顯示學生資訊
+                            break;
+                        }
+                    }
+
+                    if (!found) 
+					{
+                        printf("資料不存在\n"); // 顯示資料不存在
+                    }
+
+                    system("pause"); // 暫停屏幕等待按鍵
+                    count3 = 1; // 完成顯示，跳出循環
+                }
+                break;	
         }
     }
 
