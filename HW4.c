@@ -249,7 +249,34 @@ int main()
                     count4 = 1; // 完成顯示，跳出循環
                 }
                 break;
-
+                
+                case 'E' :
+                case 'e' :
+				
+				while( count5==0)
+				{
+					int y_n;
+					printf("\nContinue?(y/n):");
+				    fflush(stdin);
+     				y_n=getche();
+     				if(y_n=='Y'||y_n=='y')
+      				count5++;
+     				else if(y_n=='N'||y_n=='n')
+     				{
+      					count6++;
+      					count5++;
+     				}
+     				else
+        			{
+         
+      				printf(" 輸入錯誤，請再次輸入\n");
+      				system("pause");
+      				system("cls");   
+					}
+        		}
+        		break;
+    			default:
+    			printf("輸入錯誤\n");
                 
         }
     }
